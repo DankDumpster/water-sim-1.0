@@ -8,7 +8,6 @@ from mpl_toolkits.mplot3d import Axes3D
 import utils.fourier_transform as ft
 
 
-
 def eta_animation(X, Y, eta_list, frame_interval, filename):
     fig, ax = plt.subplots(1, 1)
     # plt.title("Velocity field $\mathbf{u}(x,y)$ after 0.0 days", fontname = "serif", fontsize = 17)
@@ -42,7 +41,7 @@ def velocity_animation(X, Y, u_list, v_list, frame_interval, filename):
                   v_list[0][::q_int, ::q_int],
                   scale=0.2, scale_units='inches')
 
-    # qk = plt.quiverkey(Q, 0.9, 0.9, 0.001, "0.1 m/s", labelpos = "E", coordinates = "figure")
+    qk = plt.quiverkey(Q, 0.9, 0.9, 0.001, "0.1 m/s", labelpos="E", coordinates="figure")
 
     def update_quiver(num):
         u = u_list[num]
